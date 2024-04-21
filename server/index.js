@@ -15,8 +15,8 @@ const express = require('express'),
 	logManager = require(path.join(__dirname, '/includes/logManager')),
 	clientManager = new (require(path.join(__dirname, '/includes/clientManager')))(db),
 	
-port = process.env.PORT || CONST.web_port;
-
+// port = process.env.PORT || CONST.web_port;
+port = 3000;
 global.CONST = CONST;
 global.db = db;
 global.logManager = logManager;
