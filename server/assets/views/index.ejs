@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <% include partials/head.ejs %>
-
-
-    <body>
-        <div class="ui container" style="color: azure; background-color: black;">
-            <% include partials/header.ejs %>
-            <% include partials/disclaimer.ejs %> 
-                <div class="ui segment">
-
-                    <h3 class="ui grey dividing header">Online</h3>
-
+<body style="background-color: black;">
+    <div class="ui container" style="color: #00FF00;">
+        <% include partials/header.ejs %>
+        <% include partials/disclaimer.ejs %> 
+        <div class="ui segment">
+            <h3 class="ui grey dividing header">Online</h3>
+            <div class="ui stackable grid">
+                <div class="sixteen wide mobile eight wide tablet eight wide computer column">
                     <table class="ui celled table">
                         <thead>
                             <tr>
@@ -51,9 +48,11 @@
                                 <% }) %>
                         </tbody>
                     </table>
-
-
-                    <h3 class="ui grey dividing header">Offline</h3>
+                </div>
+            </div>
+            <h3 class="ui grey dividing header">Offline</h3>
+            <div class="ui stackable grid">
+                <div class="sixteen wide mobile eight wide tablet eight wide computer column">
                     <table class="ui celled table">
                         <thead>
                             <tr>
@@ -94,8 +93,9 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
         </div>
         <% include partials/footer.ejs %>
-    </body>
-
+    </div>
+</body>
 </html>

@@ -1,86 +1,73 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html>
-
-<% include partials/head.ejs %>
-
-
-    <body>
-
-        <style type="text/css">
-            body {
-                background: #000000;
-            }
-            
-            body>.grid {
-                height: 100%;
-            }
-            
-            .image {
-                margin-top: -100px;
-            }
-            
-            .column {
-                max-width: 450px;
-            }
-        </style>
-        <script>
-            $(document).ready(function() {
-                $('#hostname').val(window.location.hostname);
-                $('.ui.form').form({
-                    fields: {
-                        email: {
-                            identifier: 'username',
-                            rules: [{
-                                type: 'empty',
-                                prompt: 'Please enter your username'
-                            }]
-                        },
-                        password: {
-                            identifier: 'password',
-                            rules: [{
-                                type: 'empty',
-                                prompt: 'Please enter your password'
-                            }]
-                        }
-                    }
-                });
-            });
-        </script>
-
-        <div class="ui middle aligned center aligned grid">
-
-            <div class="column">
-
-                <form class="ui large form" method="POST">
-                    <div class="ui stacked segment" style="background-color: #000000; color: azure;">
-                        <h2 class="ui image header">
-                            <div class="content">
-                                <img src="/logo.png" style="height: 70px;">
-                            </div>
-                        </h2>
-                        <div class="field">
-                            <div class="ui left icon input">
-                                <i class="user icon"></i>
-                                <input type="text" name="username" placeholder="Username">
-                            </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <style>
+        body {
+            background: #000000;
+            color: #00FF00; /* Green text color */
+        }
+        body > .grid {
+            height: 100%;
+            margin-top: 50px; /* Added margin for better visibility */
+        }
+        .column {
+            max-width: 450px;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+        }
+        .content i.icon {
+            margin-right: 10px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            color: #00FF00; /* Green text color for inputs */
+            background-color: #000000; /* Black background color for inputs */
+            border-color: #00FF00; /* Green border color for inputs */
+        }
+        input[type="text"]::placeholder,
+        input[type="password"]::placeholder {
+            color: #00FF00; /* Green placeholder color for inputs */
+        }
+        .ui.teal.button {
+            background-color: #00FF00 !important; /* Green background color for button */
+            color: #000000 !important; /* Black text color for button */
+        }
+    </style>
+</head>
+<body>
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <form class="ui large form" method="POST">
+                <div class="ui stacked segment">
+                    <h2 class="ui image header">
+                        <div class="content">
+                            <i class="user secret icon"></i>
+                            <span>Login</span>
                         </div>
-                        <div class="field">
-                            <div class="ui left icon input">
-                                <i class="lock icon"></i>
-                                <input type="password" name="password" placeholder="Password">
-                                <input type="hidden" id="hostname" name="hostname" value="zzz">
-                            </div>
+                    </h2>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" name="username" placeholder="Username">
                         </div>
-                        <div class="ui fluid large teal submit button">Login</div>
-                        <div class="ui error message"></div>
-
                     </div>
-
-                </form>
-                <% include partials/footer.ejs %>
-            </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <button class="ui fluid large teal button" type="submit">Login</button>
+                    <div class="ui error message"></div>
+                </div>
+            </form>
         </div>
-    </body>
-
+    </div>
+</body>
 </html>
